@@ -6,7 +6,8 @@ $error="";
   if(isset($_GET['city']))
   {  
     $city=$_GET['city'];
-    $url_contents=file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".urlencode($city)."&appid=73e3d2fd5a82e488d9fa61691d75630b");
+    $api_key=//put your own key here
+    $url_contents=file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".urlencode($city)."&appid=".$api_key);
     $weather_array=json_decode($url_contents,true); //true converts objects to associative array 
     if($weather_array["cod"]==200)
     {
